@@ -1,4 +1,5 @@
 import router from "express";
+import prisma from "../prisma/client.js";
 
 const personalInfoRouter = router();
 
