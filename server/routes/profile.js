@@ -3,7 +3,7 @@ import prisma from "../prisma/client.js"
 
 const profileRouter = Router();
 
-profileRouter.post("/profile", async (req, res) => {
+profileRouter.post("/", async (req, res) => {
     //1. access req and 
     const { name, title, about } = req.body;
     const createProfile = {
@@ -19,6 +19,19 @@ profileRouter.post("/profile", async (req, res) => {
     return res.status(201).json({
         "success": true,
         "message": "create new profile successfully"
+    })
+
+})
+
+profileRouter.get("/", async (req, res) => {
+    //1. access req and body
+    //2. sql statment
+    const result = await prisma.profile.findMany();
+    //3. res section
+    return res.status(200).json({
+        "success": true,
+        "message": "test get method on vercel",
+        "data": result
     })
 
 })

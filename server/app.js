@@ -8,7 +8,7 @@ const PORT = 4000;
 
 app.use(express.json());
 app.use("/", personalInfoRouter);
-app.use("/", profileRouter);
+app.use("/profile", profileRouter);
 
 /*
 app.get("/", async (req, res) => {
