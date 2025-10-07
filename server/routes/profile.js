@@ -1,7 +1,7 @@
-import Router from "express"
+import express from "express"
 import prisma from "../prisma/client.js"
 
-const profileRouter = Router();
+const profileRouter = express.Router();
 
 profileRouter.post("/", async (req, res) => {
     //1. access req and 

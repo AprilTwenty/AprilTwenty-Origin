@@ -1,5 +1,6 @@
 import express from "express";
 import profileRouter from "../routes/profile.js";
+import serverless from "serverless-http";
 
 const app = express();
 
@@ -16,4 +17,4 @@ app.get("/", async (req, res) => {
     })
 })
 
-export default app;
+export const handler = serverless(app);
