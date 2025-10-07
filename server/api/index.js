@@ -10,4 +10,4 @@ app.get("/", (req, res) => {
   res.json({ success: true, message: "test pass" });
 });
 
-export const handler = serverless(app);
+export default serverless(app);
